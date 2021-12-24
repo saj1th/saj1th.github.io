@@ -51,3 +51,14 @@ h6, .h6{
 .content strong {
   font-weight: bold;
 }
+
+.content p em {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.content hr{
+  border-width: 0px;
+  border-bottom: 1px solid #e2e2e2;
+
+}

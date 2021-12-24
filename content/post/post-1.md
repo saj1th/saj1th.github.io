@@ -5,16 +5,16 @@ image: "images/blog/rethink-data.png"
 image_webp: "images/blog/rethink-data.png"
 description: "Modern Cloud Data Architecture"
 categories: ["data pipeline"]
-summary: "In 2017, I had the opportunity to present the \"Architecting Data Lakes on AWS\" session at the AWS India Summit. My team at Hifx had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases. 
+summary: "Back in 2017, I had this opportunity to present the \"Architecting Data Lakes on AWS\" session at the AWS India Summit. My team at Hifx had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases.
 \n\n
 <br />
 Five years later,  the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today."
 draft: false
 ---
 
-In 2017, I had the opportunity to present the ["**Architecting Data Lakes on AWS**"](https://bit.ly/awskochi2016) session at the AWS India Summit. My team at [Hifx](https://www.linkedin.com/in/mohanhifx/) had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases. 
+Back in 2017, I had this opportunity to present the ["**Architecting Data Lakes on AWS**"](https://bit.ly/awskochi2016) session at the AWS India Summit. My team at [Hifx](https://www.linkedin.com/in/mohanhifx/) had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases. 
 
-Five years later,  the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today.
+Five years have passed since, and the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today.
 
 Before diving into the re-architecture, let me shed some more light on the platform itself and the business problems it solved back in 2016.
 
@@ -117,7 +117,7 @@ The following videos explain how lakehouse with delta lake adds simplicity, perf
 
 #### Serving Layer
 
-DynamoDB is still a good choice for the recommendations datastore as long as we work around its [limits](https://www.alexdebrie.com/posts/dynamodb-limits/).  Adding Amazon DynamoDB Accelerator (DAX) for the Content Recommendation Api could help keep the provisioned throughput down for DynamoDB while maintaining lower latencies
+DynamoDB is still a good choice for the recommendations datastore as long as we work around its [limits](https://www.alexdebrie.com/posts/dynamodb-limits/).  Adding Amazon DynamoDB Accelerator (DAX) for the Content Recommendation API could help keep the provisioned throughput down for DynamoDB while maintaining lower latencies
 
 With the [Photon engine](https://databricks.com/product/photon)  providing [better price/performance](https://databricks.com/session_na21/radical-speed-for-sql-queries-on-databricks-photon-under-the-hood) for all the data in the data lake -  [Databricks SQL clusters](https://databricks.com/product/databricks-sql) could eliminate the need for the additional hop of copying data over to a data warehouse.
 
@@ -137,3 +137,8 @@ We went through some design considerations applicable while architecting a cloud
 The resulting solution is a much simpler stack to own and operate with a lower TCO.
 
 {{< figure src="/images/blog/rearchitecture.png" alt="Rearchitecture" width="90%" >}}
+
+
+---
+
+*Credits: Thank you [Rafeeq Mohamed](https://www.justraffing.com/) & [Mahija Abdulkader](https://www.linkedin.com/in/mahija-abdulkader-b744696/) for being a sounding board and help with this post*
