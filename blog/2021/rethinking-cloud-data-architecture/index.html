@@ -5,7 +5,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name=description content="Modern Cloud Data Architecture">
 <meta name=author content="saj1th">
-<meta name=generator content="Hugo 0.91.1">
+<meta name=generator content="Hugo 0.91.2">
 <link rel="shortcut icon" href=https://justjotting.com/images/favicon-32x32.png type=image/x-icon>
 <link rel=icon href=https://justjotting.com/images/favicon-32x32.png type=image/x-icon>
 <meta property="og:image" content="https://justjotting.com/images/blog/rethink-data.png">
@@ -97,10 +97,11 @@ and improve the user experience of their content portals through recommendation 
 <p>There is increasing consensus that <a href=https://a16z.com/2020/10/27/blueprints-for-data-infrastructure-lakehouse-storage-data-is-not-the-new-oil-more/>Data is eating</a> the software that is eating the world.
 As every company is becoming a data company, it also amplifies some of the challenges. In addition to the requirements discussed in the first section, organizations today need to navigate concerns around</p>
 <ul>
-<li>Data quality, reliability and accuracy</li>
-<li>Data discovery & lineage</li>
-<li>Data governance</li>
-<li>Data observability</li>
+<li>Data Quality, Reliability and Accuracy</li>
+<li>Data Sharing</li>
+<li>Data Discovery & Lineage</li>
+<li>Data Governance</li>
+<li>Data Observability</li>
 </ul>
 <p>I&rsquo;ll reserve that discussion for another blog post and focus this one on high level architecture.</p>
 <h4 id=accidental-vs-essential-complexity---does-it-have-to-be-this-hard>Accidental vs Essential Complexity - Does it have to be this hard?</h4>
@@ -142,7 +143,10 @@ As every company is becoming a data company, it also amplifies some of the chall
 <p>For the real-time data store, several solutions have emerged in the last few years, like Pinot and Clickhouse in addition to Druid. Now - in practice, the definition of the term real-time varies from industry to industry and use case to use case.</p>
 <p>Real-time for an editor in a newsroom could be to know the trending topic/article in thirty seconds to one minute. However, the latency requirements of a use-case for real-time ad targeting or game leaderboards could be very different.</p>
 <p>There are a small subset of use-cases served by niche real-time data stores with features like pre-aggregation and materialized views. For this use-case, however, the requirements would be met if queries are returned in lower single-digit seconds. Given the newer <a href=https://databricks.com/blog/2021/09/08/new-performance-improvements-in-databricks-sql.html>intelligent workload management</a> features and the fact that we could avoid copying data over to another system - Photon engine is a viable option.</p>
-<p>We went through how to simply a modern data stack while improving reliability and maintaining lower price/performance. The resulting architecture diagram is shown below.</p>
+<br>
+<p><strong>You Don&rsquo;t Need to Compromise Simplicity For Performance & Reliability</strong></p>
+<p>We went through some design considerations applicable while architecting a cloud data stack. Instead of building something from scratch, the <strong>Ingestion layer</strong> would be kept lightweight - preferably an OSS-based solution (that meets the requirements). For the <strong>Processing layer</strong>, instead of having separate batch and streaming components, Prism would make use of delta lake and unify them. Regarding language choice for Prism- I’d advocate for writing it in <a href=https://github.com/t3rmin4t0r/notes/wiki/Language-Choice-and-Project-lifetimes>Python instead of Scala</a>. For the <strong>Serving Layer</strong>, the Lakehouse approach with the <a href=(https://databricks.com/session_eu20/photon-technical-deep-dive-how-to-think-vectorized)>Photon Engine</a> eliminates the need to duplicate datasets to multiple locations.</p>
+<p>The resulting solution is a much simpler stack to own and operate with a lower TCO.</p>
 <figure><img src=/images/blog/rearchitecture.png alt=Rearchitecture width=90%>
 </figure>
 </div>
