@@ -1,6 +1,6 @@
 ---
-title: "Rethinking Cloud Data Architecture In 2022"
-date: 2020-09-01T11:07:10+06:00
+title: "Rethinking Cloud Data Architecture"
+date: 2021-12-24T11:07:10+06:00
 image: "images/blog/rethink-data.png"
 image_webp: "images/blog/rethink-data.png"
 description: "Modern Cloud Data Architecture"
@@ -63,7 +63,7 @@ The high-level architecture of Lens that combines all the four layers is  shown 
 
 <br /><br />
 
-### 2022: Rethinking Cloud Data Architecture
+### 2021: Rethinking Cloud Data Architecture
 There is increasing consensus that  [Data is eating](https://a16z.com/2020/10/27/blueprints-for-data-infrastructure-lakehouse-storage-data-is-not-the-new-oil-more/) the software that is eating the world. 
 As every company is becoming a data company, it also amplifies some of the challenges. In addition to the requirements discussed in the first section, organizations today need to navigate concerns around
 - Data quality, reliability and accuracy

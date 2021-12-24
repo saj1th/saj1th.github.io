@@ -11,13 +11,17 @@ googleAnalytics = "UA-45801732-1"
 # disqus short name
 disqusShortname = "saj1th" 
 
-
 ############################# Outputs ##############################
 [outputs]
 home = ["HTML", "RSS"]
 
 [markup.goldmark.renderer]
 unsafe= true
+
+uglyURLs = true
+
+[permalinks]
+post = "/blog/:year/:title/"
 
 ############################# Plugins ##############################
 
@@ -75,6 +79,8 @@ custom_script= ""
 enable = false
 expire_days = 2
 
+
+  
 ############################# social site ########################
 
 [[params.social]]
