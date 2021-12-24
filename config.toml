@@ -1,0 +1,94 @@
+######################## default configuration ####################
+baseURL = "https://justjotting.com"
+title = "justjotting | occasional notes on all things data"
+theme = "touchy"
+# post pagination
+paginate = "3"
+# post excerpt
+summaryLength = "100"
+# google analytics
+googleAnalytics = "UA-45801732-1"
+# disqus short name
+disqusShortname = "saj1th" 
+
+
+############################# Outputs ##############################
+[outputs]
+home = ["HTML", "RSS"]
+
+[markup.goldmark.renderer]
+unsafe= true
+
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css2?family=Crimson+Text&family=Raleway:wght@400;500;600&display=swap"
+attributes = "media"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/fontawesome.min.js"
+attributes = "defer"
+
+[[params.plugins.js]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/brands.min.js"
+attributes = "defer"
+
+[[params.plugins.js]]
+link = "plugins/turbolinks/turbolinks.js"
+attributes = "data-turbolinks-suppress-warning defer"
+
+###################### Navigation ###########################
+
+# main menu
+[[menu.main]]
+name = "About"
+url = "about"
+weight = 1
+    
+[[menu.main]]
+name = "Blog"
+url = ""
+weight = 2
+
+
+#################### default parameters ############################
+[params]
+logo = "images/logo.png"
+logo_width = "170px"
+favicon = "images/favicon-32x32.png"
+# Meta data
+description = ""
+author = "saj1th"
+# contact info
+address = ""
+mobile = "+"
+email = "gavel.aerobic0k@icloud.com"
+# copyright
+copyright = ""
+# custom script on header
+custom_script= ""
+
+# cookies
+[params.cookies]
+enable = false
+expire_days = 2
+
+############################# social site ########################
+
+[[params.social]]
+title = "twitter"
+icon = "fab fa-twitter" # themify icon : https://themify.me/themify-icons
+link = "https://twitter.com/saj1th"
+
+
+[[params.social]]
+title = "github"
+icon = "fab fa-github" # themify icon : https://themify.me/themify-icons
+link = "https://github.com/saj1th"
+
+[[params.social]]
+title = "linkedin"
+icon = "fab fa-linkedin" # themify icon : https://themify.me/themify-icons
+link = "https://www.linkedin.com/in/saj1th"
