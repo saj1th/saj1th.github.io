@@ -7,7 +7,7 @@ description: "Modern Cloud Data Architecture"
 categories: ["data pipeline"]
 summary: "In 2017, I had the opportunity to present the \"Architecting Data Lakes on AWS\" session at the AWS India Summit. My team at Hifx had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases. 
 \n\n
-
+<br />
 Five years later,  the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today."
 draft: false
 ---
