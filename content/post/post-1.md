@@ -66,10 +66,11 @@ The high-level architecture of Lens that combines all the four layers is  shown 
 ### 2021: Rethinking Cloud Data Architecture
 There is increasing consensus that  [Data is eating](https://a16z.com/2020/10/27/blueprints-for-data-infrastructure-lakehouse-storage-data-is-not-the-new-oil-more/) the software that is eating the world. 
 As every company is becoming a data company, it also amplifies some of the challenges. In addition to the requirements discussed in the first section, organizations today need to navigate concerns around
-- Data quality, reliability and accuracy
-- Data discovery & lineage
-- Data governance 
-- Data observability
+- Data Quality, Reliability and Accuracy
+- Data Sharing
+- Data Discovery & Lineage
+- Data Governance 
+- Data Observability
 
 I'll reserve that discussion for another blog post and focus this one on high level architecture.
 
@@ -127,10 +128,12 @@ Real-time for an editor in a newsroom could be to know the trending topic/articl
 
 There are a small subset of use-cases served by niche real-time data stores with features like pre-aggregation and materialized views. For this use-case, however, the requirements would be met if queries are returned in lower single-digit seconds.  Given the newer [intelligent workload management](https://databricks.com/blog/2021/09/08/new-performance-improvements-in-databricks-sql.html) features and the fact that we could avoid copying data over to another system - Photon engine is a viable option.
 
-We went through how to simply a modern data stack while improving reliability and maintaining lower price/performance. The resulting architecture diagram is shown below.
+<br />
+
+__You Don't Need to Compromise Simplicity For Performance & Reliability__
+
+We went through some design considerations applicable while architecting a cloud data stack. Instead of building something from scratch, the __Ingestion layer__ would be kept lightweight - preferably an OSS-based solution (that meets the requirements). For the __Processing layer__, instead of having separate batch and streaming components, Prism would make use of delta lake and unify them. Regarding language choice for Prism- I’d advocate for writing it in [Python instead of Scala](https://github.com/t3rmin4t0r/notes/wiki/Language-Choice-and-Project-lifetimes). For the __Serving Layer__, the Lakehouse approach with the [Photon Engine]((https://databricks.com/session_eu20/photon-technical-deep-dive-how-to-think-vectorized)) eliminates the need to duplicate datasets to multiple locations.
+
+The resulting solution is a much simpler stack to own and operate with a lower TCO.
 
 {{< figure src="/images/blog/rearchitecture.png" alt="Rearchitecture" width="90%" >}}
-
-
-
-
