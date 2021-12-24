@@ -58,8 +58,8 @@
 <img loading=lazy class=img-fluid src=https://justjotting.com/images/blog/rethink-data.png onerror="this.onerror=null,this.src='https://justjotting.com/images/blog/rethink-data.png'" alt="Rethinking Cloud Data Architecture">
 <div class="card-body px-0">
 <div class="content text-left">
-<p>In 2017, I had the opportunity to present the <a href=https://bit.ly/awskochi2016>"<strong>Architecting Data Lakes on AWS</strong>"</a> session at the AWS India Summit. My team at <a href=https://www.linkedin.com/in/mohanhifx/>Hifx</a> had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases.</p>
-<p>Five years later, the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today.</p>
+<p>Back in 2017, I had this opportunity to present the <a href=https://bit.ly/awskochi2016>"<strong>Architecting Data Lakes on AWS</strong>"</a> session at the AWS India Summit. My team at <a href=https://www.linkedin.com/in/mohanhifx/>Hifx</a> had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases.</p>
+<p>Five years have passed since, and the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today.</p>
 <p>Before diving into the re-architecture, let me shed some more light on the platform itself and the business problems it solved back in 2016.</p>
 <br>
 <h4 id=circa-2016-cloud-data-platform-to-support-data-analytics-and-ai>Circa 2016: Cloud Data Platform To Support Data Analytics and AI</h4>
@@ -138,7 +138,7 @@ As every company is becoming a data company, it also amplifies some of the chall
 </ul>
 <p>It is great to see many other open data lake table formats also evolving because it underpins the belief that the <a href=https://databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html>lakehouse</a> architecture pattern is a great way to build future-friendly data platforms. I will reserve comparison of delta lake with other open data lake formats and a comparison of different deta serialization formats like protobuf, thrift & avro for another post</p>
 <h4 id=serving-layer>Serving Layer</h4>
-<p>DynamoDB is still a good choice for the recommendations datastore as long as we work around its <a href=https://www.alexdebrie.com/posts/dynamodb-limits/>limits</a>. Adding Amazon DynamoDB Accelerator (DAX) for the Content Recommendation Api could help keep the provisioned throughput down for DynamoDB while maintaining lower latencies</p>
+<p>DynamoDB is still a good choice for the recommendations datastore as long as we work around its <a href=https://www.alexdebrie.com/posts/dynamodb-limits/>limits</a>. Adding Amazon DynamoDB Accelerator (DAX) for the Content Recommendation API could help keep the provisioned throughput down for DynamoDB while maintaining lower latencies</p>
 <p>With the <a href=https://databricks.com/product/photon>Photon engine</a> providing <a href=https://databricks.com/session_na21/radical-speed-for-sql-queries-on-databricks-photon-under-the-hood>better price/performance</a> for all the data in the data lake - <a href=https://databricks.com/product/databricks-sql>Databricks SQL clusters</a> could eliminate the need for the additional hop of copying data over to a data warehouse.</p>
 <p>For the real-time data store, several solutions have emerged in the last few years, like Pinot and Clickhouse in addition to Druid. Now - in practice, the definition of the term real-time varies from industry to industry and use case to use case.</p>
 <p>Real-time for an editor in a newsroom could be to know the trending topic/article in thirty seconds to one minute. However, the latency requirements of a use-case for real-time ad targeting or game leaderboards could be very different.</p>
@@ -149,6 +149,8 @@ As every company is becoming a data company, it also amplifies some of the chall
 <p>The resulting solution is a much simpler stack to own and operate with a lower TCO.</p>
 <figure><img src=/images/blog/rearchitecture.png alt=Rearchitecture width=90%>
 </figure>
+<hr>
+<p><em>Credits: Thank you <a href=https://www.justraffing.com/>Rafeeq Mohamed</a> & <a href=https://www.linkedin.com/in/mahija-abdulkader-b744696/>Mahija Abdulkader</a> for being a sounding board and helping with this post</em></p>
 </div>
 </article>
 <div class=mt-5>
