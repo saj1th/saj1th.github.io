@@ -141,4 +141,4 @@ The resulting solution is a much simpler stack to own and operate with a lower T
 
 ---
 
-*PS: Thank you [Rafeeq Mohamed](https://www.justraffing.com/) , [Mahija Abdulkader](https://www.linkedin.com/in/mahija-abdulkader-b744696/) and [John O'Dwyer](https://www.linkedin.com/in/johnodwyer/) for being my sounding board*
+*PS: Thank you Rafeeq Mohamed, [Mahija Abdulkader](https://www.linkedin.com/in/mahija-abdulkader-b744696/) and [John O'Dwyer](https://www.linkedin.com/in/johnodwyer/) for being my sounding board*
