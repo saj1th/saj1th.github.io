@@ -12,7 +12,7 @@ Five years later,  the cloud data technology landscape has undergone many change
 draft: false
 ---
 
-In 2017, I had this opportunity to present the ["**Architecting Data Lakes on AWS**"](https://bit.ly/awskochi2016) session at the AWS India Summit. My team at [Hifx](https://www.linkedin.com/in/mohanhifx/) had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases. 
+In 2017, I had this opportunity to present the ["**Architecting Data Lakes on AWS**"](https://bit.ly/awskochi2016) session at the AWS India Summit. My team at Hifx had built multiple Data & ML pipelines for a leading media conglomerate the previous year, and the session highlighted the underlying architecture that powered all these use-cases. 
 
 Five years have passed since, and the cloud data technology landscape has undergone many changes, and I thought it would be a good exercise to see how the data stack/architecture would look like if we are building this today.
 
